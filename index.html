@@ -1,471 +1,238 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
 <meta charset="UTF-8">
-
 <title>Galeri Foto & Video ❤️</title>
-
 <style>
-
 * {
-
-box-sizing: border-box;
-
+  box-sizing: border-box;
 }
-
-
 
 body {
+  background-image: url('791af3129dd3cb71f16e5d9cb35cdd84.jpg');
+  /* Agar foto background memenuhi seluruh layar dengan rapi */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #1a1218;
 
-background-image: url('791af3129dd3cb71f16e5d9cb35cdd84.jpg');
-
-
-/* Agar foto background memenuhi seluruh layar dengan rapi */
-
-background-size: cover;
-
-background-position: center;
-
-background-repeat: no-repeat;
-
-background-attachment: fixed;
-
-background-color: #1a1218;
-
-
-
-/* Menengahkan kartu foto tepat di tengah layar */
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-min-height: 100vh;
-
-margin: 0;
-
-padding: 24px 14px;
-
-overflow-x: hidden;
-
+  /* Menengahkan kartu foto tepat di tengah layar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px 14px;
+  overflow-x: hidden;
 }
-
 
 .kartu-foto {
-
-position: relative;
-
-z-index: 2;
-
-width: 560px;
-
-max-width: 100%;
-
-background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(255, 244, 248, 0.90));
-
-backdrop-filter: blur(8px);
-
-border: 1.5px solid rgba(255, 182, 200, 0.75);
-
-border-radius: 16px;
-
-padding: 16px;
-
-box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 143, 177, 0.25);
-
-text-align: center;
-
-font-family: 'Segoe UI', Arial, sans-serif;
-
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  position: relative;
+  z-index: 2;
+  width: 560px;
+  max-width: 100%;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(255, 244, 248, 0.90));
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 182, 200, 0.75);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 143, 177, 0.25);
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .kartu-foto:hover {
-
-transform: translateY(-4px);
-
-box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 26px rgba(255, 120, 160, 0.4);
-
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 26px rgba(255, 120, 160, 0.4);
 }
-
-
 
 /* Susunan galeri menjadi 2 kolom */
-
 .galeri-grid {
-
-display: grid;
-
-grid-template-columns: repeat(2, 1fr);
-
-gap: 10px;
-
-margin-bottom: 10px;
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
 }
-
-
 
 @media (max-width: 460px) {
-
-.galeri-grid {
-
-grid-template-columns: 1fr;
-
+  .galeri-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-}
-
-
 
 .bingkai-img {
-
-overflow: hidden;
-
-border-radius: 10px;
-
-border: 1px solid rgba(255, 165, 190, 0.45);
-
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 165, 190, 0.45);
 }
-
-
 
 .kartu-foto img {
-
-display: block;
-
-width: 100%;
-
-height: 165px;
-
-object-fit: cover;
-
-border-radius: 10px;
-
-transition: transform 0.35s ease;
-
+  display: block;
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.35s ease;
 }
-
-
 
 .bingkai-img:hover img {
-
-transform: scale(1.04);
-
+  transform: scale(1.04);
 }
-
-
 
 /* 👇 STYLING UNTUK VIDEO 👇 */
-
 .bingkai-video {
-
-overflow: hidden;
-
-border-radius: 10px;
-
-border: 1px solid rgba(255, 165, 190, 0.55);
-
-background-color: #140d12;
-
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 165, 190, 0.55);
+  background-color: #140d12;
 }
-
-
 
 .kartu-foto video {
-
-display: block;
-
-width: 100%;
-
-height: 220px;
-
-object-fit: cover;
-
-border-radius: 10px;
-
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
 }
-
-
 
 /* Jika ingin video memanjang selebar 2 kolom */
-
 .video-lebar {
-
-grid-column: 1 / -1;
-
+  grid-column: 1 / -1;
 }
-
-
 
 @media (max-width: 460px) {
-
-.video-lebar {
-
-grid-column: auto;
-
+  .video-lebar {
+    grid-column: auto;
+  }
 }
-
-}
-
-
 
 .pemisah {
-
-width: 60%;
-
-height: 1px;
-
-margin: 10px auto 8px;
-
-background: linear-gradient(to right, transparent, #ff8fab, transparent);
-
+  width: 60%;
+  height: 1px;
+  margin: 10px auto 8px;
+  background: linear-gradient(to right, transparent, #ff8fab, transparent);
 }
-
-
 
 .kartu-foto figcaption {
-
-margin-top: 4px;
-
-font-size: 15px;
-
-font-weight: 600;
-
-color: #4a2c38;
-
-letter-spacing: 0.3px;
-
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4a2c38;
+  letter-spacing: 0.3px;
 }
-
-
 
 /* Wadah & animasi hiasan melayang */
-
 .hiasan-container {
-
-position: fixed;
-
-top: 0;
-
-left: 0;
-
-width: 100%;
-
-height: 100%;
-
-pointer-events: none;
-
-z-index: 1;
-
-overflow: hidden;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
 }
-
-
 
 .partikel {
-
-position: absolute;
-
-bottom: -45px;
-
-animation: naikBerputar linear forwards;
-
+  position: absolute;
+  bottom: -45px;
+  animation: naikBerputar linear forwards;
 }
-
-
 
 .hati {
-
-color: #ff4d6d;
-
-text-shadow: 0 2px 8px rgba(255, 77, 109, 0.55);
-
+  color: #ff4d6d;
+  text-shadow: 0 2px 8px rgba(255, 77, 109, 0.55);
 }
-
-
 
 .sakura {
-
-color: #ffb3c6;
-
-text-shadow: 0 2px 6px rgba(255, 179, 198, 0.6);
-
+  color: #ffb3c6;
+  text-shadow: 0 2px 6px rgba(255, 179, 198, 0.6);
 }
-
-
 
 @keyframes naikBerputar {
-
-0% {
-
-transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
-
-opacity: 0;
-
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.92;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(22px) rotate(140deg) scale(1);
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-112vh) translateX(-22px) rotate(280deg) scale(1.08);
+    opacity: 0;
+  }
 }
-
-15% {
-
-opacity: 0.92;
-
-}
-
-50% {
-
-transform: translateY(-50vh) translateX(22px) rotate(140deg) scale(1);
-
-}
-
-85% {
-
-opacity: 0.8;
-
-}
-
-100% {
-
-transform: translateY(-112vh) translateX(-22px) rotate(280deg) scale(1.08);
-
-opacity: 0;
-
-}
-
-}
-
 </style>
-
 </head>
-
 <body>
-
-
 
 <div class="hiasan-container" id="hiasanContainer"></div>
 
-
-
 <figure class="kartu-foto">
+  <div class="galeri-grid">
+    <!-- 4 Foto -->
+    <div class="bingkai-img">
+      <img src="Screenshot (36).png" alt="Deskripsi foto 1">
+    </div>
+    <div class="bingkai-img">
+      <img src="Screenshot (35).png" alt="Deskripsi foto 2">
+    </div>
+    <div class="bingkai-img">
+      <img src="RobloxScreenShot20261111_005331985.png" alt="Deskripsi foto 3">
+    </div>
+    <div class="bingkai-img">
+      <img src="RobloxScreenShot20260930_120159142.png" alt="Deskripsi foto 4">
+    </div>
 
-<div class="galeri-grid">
+    <!-- Video -->
+    <div class="bingkai-video video-lebar">
+      <video controls preload="metadata">
+        <source src="Roblox-2026-11-14T00_16_55.380Z - Trim.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
 
-<!-- 4 Foto -->
-
-<div class="bingkai-img">
-
-<img src="Screenshot (36).png" alt="Deskripsi foto 1">
-
-</div>
-
-<div class="bingkai-img">
-
-<img src="Screenshot (35).png" alt="Deskripsi foto 2">
-
-</div>
-
-<div class="bingkai-img">
-
-<img src="RobloxScreenShot20261111_005331985.png" alt="Deskripsi foto 3">
-
-</div>
-
-<div class="bingkai-img">
-
-<img src="RobloxScreenShot20260930_120159142.png" alt="Deskripsi foto 4">
-
-</div>
-
-
-
-<!-- Video -->
-
-<div class="bingkai-video video-lebar">
-
-<video controls preload="metadata">
-
-<source src="Roblox-2026-11-14T00_16_55.380Z - Trim.mp4" type="video/mp4">
-
-</video>
-
-</div>
-
-</div>
-
-
-
-<div class="pemisah"></div>
-
-<figcaption>that one person. ❤️</figcaption>
-
+  <div class="pemisah"></div>
+  <figcaption>that one person. ❤️</figcaption>
 </figure>
 
-
-
 <script>
-
 const hiasanContainer = document.getElementById('hiasanContainer');
-
 const daftarHiasan = [
-
-{ simbol: '❤️', kelas: 'hati' },
-
-{ simbol: '🩷', kelas: 'hati' },
-
-{ simbol: '💖', kelas: 'hati' },
-
-{ simbol: '🌸', kelas: 'sakura' },
-
-{ simbol: '✨', kelas: 'sakura' }
-
+  { simbol: '❤️', kelas: 'hati' },
+  { simbol: '🩷', kelas: 'hati' },
+  { simbol: '💖', kelas: 'hati' },
+  { simbol: '🌸', kelas: 'sakura' },
+  { simbol: '✨', kelas: 'sakura' }
 ];
 
-
-
 function buatHiasan() {
+  const pilihan = daftarHiasan[Math.floor(Math.random() * daftarHiasan.length)];
+  const partikel = document.createElement('div');
+  partikel.classList.add('partikel', pilihan.kelas);
+  partikel.textContent = pilihan.simbol;
 
-const pilihan = daftarHiasan[Math.floor(Math.random() * daftarHiasan.length)];
+  partikel.style.left = Math.random() * 100 + 'vw';
+  partikel.style.fontSize = (Math.random() * 14 + 14) + 'px';
+  const durasi = Math.random() * 4 + 4.5;
+  partikel.style.animationDuration = durasi + 's';
 
-const partikel = document.createElement('div');
+  hiasanContainer.appendChild(partikel);
 
-partikel.classList.add('partikel', pilihan.kelas);
-
-partikel.textContent = pilihan.simbol;
-
-
-
-partikel.style.left = Math.random() * 100 + 'vw';
-
-partikel.style.fontSize = (Math.random() * 14 + 14) + 'px';
-
-const durasi = Math.random() * 4 + 4.5;
-
-partikel.style.animationDuration = durasi + 's';
-
-
-
-hiasanContainer.appendChild(partikel);
-
-
-
-setTimeout(() => {
-
-partikel.remove();
-
-}, durasi * 1000);
-
+  setTimeout(() => {
+    partikel.remove();
+  }, durasi * 1000);
 }
 
-
-
 setInterval(buatHiasan, 380);
-
 </script>
+</body>
+</html>
